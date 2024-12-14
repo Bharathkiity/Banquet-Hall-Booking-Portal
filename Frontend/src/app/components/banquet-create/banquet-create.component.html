@@ -1,0 +1,114 @@
+<div class="container m-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form [formGroup]="banquetFormGroup" (ngSubmit)="onSubmit()">
+                <div formGroupName="banquet">
+                    <h2>Add New Banquet Details</h2>
+                    <hr />
+                    <!-- category control -->
+                    <div class="my-3">
+                        <label class="form-label">Category:</label>
+                        <select formControlName="category" class="form-control">
+                            <option *ngFor="let banquetCategory of banquetCatgories" [ngValue]="banquetCategory">
+                                {{banquetCategory.categoryName}}
+                            </option>
+                        </select>
+                        <div *ngIf="
+                category?.invalid && (category?.touched || category?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="category?.errors?.['required']">
+                                Category is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- category control ended-->
+
+                    <!-- description control-->
+                    <div class="my-3">
+                        <label class="form-label">Description: </label>
+                        <input type="text" class="form-control" formControlName="description" />
+                        <div *ngIf="description?.invalid && (description?.touched || description?.dirty)" class="alert alert-danger">
+                            <div *ngIf="description?.errors?.['required']">description is required</div>
+                        </div>
+                    </div>
+                    <!-- description control ended-->
+
+                    <!-- location control-->
+                    <div class="my-3">
+                        <label class="form-label">location: </label>
+                        <input type="text" class="form-control" formControlName="location" />
+                        <div *ngIf="location?.invalid &&
+                (location?.touched || location?.dirty)" class="alert alert-danger">
+                            <div *ngIf="location?.errors?.['required']">
+                                location is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- location control ended-->
+
+                    <!-- mobile control-->
+                    <div class="my-3">
+                        <label class="form-label">mobile: </label>
+                        <input type="number" class="form-control" formControlName="mobile" />
+                        <div *ngIf="
+                        mobile?.invalid && (mobile?.touched || mobile?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="mobile?.errors?.['required']">
+                                mobile is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- mobile control ended-->
+
+                    <!-- capacity control-->
+                    <div class="my-3">
+                        <label class="form-label">capacity: </label>
+                        <input type="number" class="form-control" formControlName="capacity" />
+                        <div *ngIf="
+                        capacity?.invalid &&
+                (capacity?.touched || capacity?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="capacity?.errors?.['required']">
+                                capacity is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- capacity control ended-->
+
+                    <!-- price control-->
+                    <div class="my-3">
+                        <label class="form-label">price: </label>
+                        <input type="text" class="form-control" formControlName="price" />
+                        <div *ngIf="
+                        price?.invalid && (price?.touched || price?.dirty)
+                " class="alert alert-danger">
+                            <div *ngIf="price?.errors?.['required']">
+                                price is required
+                            </div>
+                        </div>
+                    </div>
+                    <!-- price control ended-->
+                
+                    <!-- event control-->
+                    <div class="my-3">
+                        <label class="form-label">event: </label>
+                        <input type="text" class="form-control" formControlName="event" />
+                        <div *ngIf="event?.invalid && (event?.touched || event?.dirty)" class="alert alert-danger">
+                            <div *ngIf="event?.errors?.['required']">event is required</div>
+                        </div>
+                    </div>
+                    <!-- event control ended-->
+
+                    
+                </div>
+        
+        
+
+                <!-- submit button-->
+                <div class="d-grid">
+                    <input type="submit" value="Add New Product" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>

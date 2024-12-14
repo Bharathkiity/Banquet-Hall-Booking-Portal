@@ -1,0 +1,30 @@
+<div class="table-responsive m-5 border-3">
+    <table class="table table-bordered table-striped border-3">
+        <thead>
+            <tr class="border-3">
+                <th class="border-3">Description</th>
+                <th class="border-3">Location</th>
+                <th class="border-3">Event</th>
+                <th class="border-3">Capacity</th>
+                <th class="border-3">Price</th>
+                <th class="border-3">Mobile</th>
+                <th class="border-3">Options</th>
+            </tr>
+        </thead>
+        <tbody class="border-5">
+            <tr *ngFor="let banquet of banquetHalls" class="border-3">
+                <td class="border-3">{{banquet.description}}</td>
+                <td class="border-3">{{ banquet.location }}</td>
+                <td class="border-3">{{ banquet.event }}</td>
+                <td class="border-3">{{ banquet.capacity }}</td>
+                <td class="border-3">{{ banquet.price }}</td>
+                <td class="border-3">{{ banquet.mobile }}</td>
+                <td class="border-3">
+                    <button class="btn btn-danger" (click)="removeBanquet(banquet.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
